@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+<script>
+	function pulaLinha() {
+		document.write("<br><br>")
+	};
+	function mostra(msg){
+		document.write(msg)
+		pulaLinha()
+	}
+	function sorteia(n){
+		return Math.round(Math.random()*n) 
+	}
+	numero_max = 10
+	var numero_pensado= sorteia(numero_max)
+	for (var cont=1;cont<=3;cont++) {
+		numero_escolhido = parseInt(prompt('Faça seu '+ cont +'º chute de 0 a ' + numero_max))
+		if (numero_pensado!=numero_escolhido) {
+			alert('Você errou o número pensado pela máquina')
+			if (numero_pensado>numero_escolhido) {
+				alert('O número chutado foi menor que o número pensado pela máquina')
+			} else {
+				alert('O número chutado foi maior que o número pensado pela máquina')
+			}
+		} else {
+			mostra('Você acertou o número pensado pela máquina')
+			break
+		}
+
+	}
+	mostra('O número pensado pela máquina foi ' + numero_pensado)
+</script>

@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<input/>
+<button>Compare with my secret</button>
+<script>
+	var segredo=[]
+	numero_segredo=3
+	for(i=1;i<=numero_segredo;i++){
+		numero = Math.round(Math.random()*10)
+		var repetido=true
+		while(repetido){
+			repetido=false
+			for(var u=0;u<segredo.length;u++){
+				if(numero==segredo[u]){
+					numero = Math.round(Math.random()*10)
+					repetido=true
+					break
+				}			
+			}
+		}
+		segredo.push(numero)
+	}
+	console.log(segredo)
+	var input = document.querySelector("input")
+	input.focus()
+	function verifica(){
+		var achou=false
+		for(var c = 0;c<segredo.length;c++) {
+			if (input.value == segredo[c]) {
+				alert("Oh, You got me. That's my secret")
+				achou = true
+				break
+			}
+		}
+		if (achou==false) {
+			alert("That's not my secret.Loser!")
+			input.value=''
+			input.focus()
+		}		
+	} 
+	var button = document.querySelector('button');
+	button.onclick = verifica;
+</script>

@@ -1,0 +1,14 @@
+<meta charset="UTF-8">
+<script>
+	function pulaLinha(){
+		document.write('<br>')
+	}
+	function mostrar(msg){
+		document.write(msg)
+		pulaLinha()
+	}
+	anoInicial = 1500
+	anoAtual = 2022
+	mostrar('O número de gerações é ') 
+	mostrar(Math.trunc((anoAtual - anoInicial)/28))
+</script>
